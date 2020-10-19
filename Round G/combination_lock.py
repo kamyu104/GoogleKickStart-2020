@@ -12,7 +12,7 @@ def combination_lock():
     X = map(lambda x:int(x)-1, raw_input().strip().split())
 
     X.sort()
-    for i in xrange(len(X)-1):
+    for i in xrange(len(X)-1):  # make it as circular array
         X.append(X[i]+N)
     prefix = [0]
     for x in X:
