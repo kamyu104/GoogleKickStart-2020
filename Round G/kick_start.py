@@ -1,6 +1,6 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
-# Google Kick Start 2020 Round G - Problem A. Kick Start
+# Google Kick Start 2020 Round G - Problem A. Kick_Start
 # https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414bfb
 #
 # Time:  O(N)
