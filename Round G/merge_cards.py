@@ -3,7 +3,7 @@
 # Google Kick Start 2020 Round G - Problem D. Merge Cards
 # https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000415054
 #
-# Time:  O(N)
+# Time:  O(N), neglating precomputing time O(N^2)
 # Space: O(1)
 #
 
