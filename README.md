@@ -4,7 +4,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 
 * [Round G](https://github.com/kamyu104/GoogleKickStart-2020#round-g)
    
-## Qualification Round
+## Round G
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Kick_Start](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414bfb)| [Python](./Round%20G/kick_start.py)| _O(N)_ | _O(1)_ | Easy | | Math |
