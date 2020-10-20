@@ -15,18 +15,18 @@ def combination_lock():
 
     X.sort()
     result = float("inf")
-    prefix_j = sum(X[i] for i in xrange(W))
-    prefix_m2_sub_1 = sum(X[i] for i in xrange(((W-1)+1)//2))
-    prefix_m1 = sum(X[i] for i in xrange(((W-1)//2)+1))
-    prefix_i_sub_1 = 0
+    prefix_j_add_1 = sum(X[i] for i in xrange(W))
+    prefix_m2 = sum(X[i] for i in xrange(((W-1)+1)//2))
+    prefix_m1_add_1 = sum(X[i] for i in xrange(((W-1)//2)+1))
+    prefix_i = 0
     for i, x in enumerate(X):
-        result = min(result, (prefix_j-prefix_m2_sub_1) - (prefix_m1-prefix_i_sub_1))
+        result = min(result, (prefix_j_add_1-prefix_m2) - (prefix_m1_add_1-prefix_i))
         ni, nj = i+1, (i+1)+(W-1)
         m1, m2 = (ni+nj)//2, (ni+nj+1)//2
-        prefix_j += X[nj-W]+N
-        prefix_m2_sub_1 += X[(m2-1)-W]+N if m2-1 >= W else X[m2-1]
-        prefix_m1 += X[m1-W]+N if m1 >= W else X[m1]
-        prefix_i_sub_1 += X[ni-1]
+        prefix_j_add_1 += X[nj-W]+N
+        prefix_m2 += X[(m2-1)-W]+N if m2-1 >= W else X[m2-1]
+        prefix_m1_add_1 += X[m1-W]+N if m1 >= W else X[m1]
+        prefix_i += X[ni-1]
     return result
 
 for case in xrange(input()):
