@@ -8,12 +8,7 @@
 #
 
 def sum_diag(C, i, j):
-    total = 0
-    while i < len(C) and j < len(C[0]):
-        total += C[i][j]
-        i += 1
-        j += 1
-    return total
+    return sum(C[i+k][j+k] for k in xrange(min(len(C)-i, len(C[0])-j)))
 
 def maximum_coins():
     N = input()
