@@ -17,7 +17,7 @@ def combination_lock():
     prefix = [0]
     for x in X:
         prefix.append(prefix[-1]+x)
-    return min((prefix[(i+W-1)+1]-prefix[(i+(i+W-1)+1)//2])-(prefix[(i+(i+W-1))//2+1]-prefix[i]) for i in xrange(W))  # find median with min dist
+    return min((prefix[(i+W-1)+1]-prefix[(i+(i+W-1)+1)//2])-(prefix[(i+(i+W-1))//2+1]-prefix[i]) for i in xrange(W))  # find median of window with min number of moves
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, combination_lock())
