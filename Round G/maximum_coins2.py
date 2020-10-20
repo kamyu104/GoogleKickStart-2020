@@ -4,20 +4,22 @@
 # https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414a23
 #
 # Time:  O(N^2)
-# Space: O(N)
+# Space: O(1)
 #
 
-from collections import Counter
+def sum_diag(C, i, j):
+    return sum(C[i+k][j+k] for k in xrange(min(len(C)-i, len(C[0])-j)))
 
 def maximum_coins():
     N = input()
     C = [map(int, raw_input().strip().split()) for _ in xrange(N)]
 
-    count = Counter()
-    for i, row in enumerate(C):
-        for j, v in enumerate(row):
-            count[i-j] += v
-    return max(count.itervalues())
+    result = 0
+    for i in xrange(len(C)):
+        result = max(result, sum_diag(C, i, 0))
+    for j in xrange(1, len(C[0])):
+        result = max(result, sum_diag(C, 0, j))
+    return result
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, maximum_coins())

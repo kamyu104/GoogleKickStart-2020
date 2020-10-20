@@ -39,7 +39,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Kick_Start](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414bfb)| [Python](./Round%20G/kick_start.py)| _O(N)_ | _O(1)_ | Easy | | Math |
-|B| [Maximum Coins](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414a23)| [Python](./Round%20G/maximum_coins.py)| _O(N^2)_ | _O(1)_ | Easy | | Matrix |
+|B| [Maximum Coins](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414a23)| [Python](./Round%20G/maximum_coins.py) [Python](./Round%20G/maximum_coins2.py)| _O(N^2)_ | _O(1)_ | Easy | | Matrix |
 |C| [Combination Lock](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414a24)| [Python](./Round%20G/combination_lock.py) [Python](./Round%20G/combination_lock2.py)| _O(WlogW)_ | _O(1)_ | Easy | | Math |
 |D| [Merge Cards](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000415054)| [Python](./Round%20G/merge_cards.py) [Python](./Round%20G/merge_cards2.py) |  _O(N^2)_ | _O(N^2)_ | Medium | | Math, DP, Precompute |
 
