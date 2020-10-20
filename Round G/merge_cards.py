@@ -15,7 +15,7 @@ def merge_cards():
     return sum(a*dp[N-1][i] for i, a in enumerate(A))
 
 MAX_N = 5000
-dp = [[0.0]*MAX_N for _ in xrange(MAX_N)]  # dp[i][j]: expected count of the (j+1)th card with total i+1 cards
+dp = [[0.0]*MAX_N for _ in xrange(MAX_N)]  # dp[i][j]: expected count of the (j+1)th card in total i+1 cards
 for i in xrange(1, MAX_N):  # precompute
     for j in xrange(i+1):
         if j-1 >= 0:
