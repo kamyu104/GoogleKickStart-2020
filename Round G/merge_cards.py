@@ -18,10 +18,10 @@ MAX_N = 5000
 dp = [[0.0]*MAX_N for _ in xrange(MAX_N)]  # dp[i][j]: expected count of (j+1)th cards with total i+1 cards 
 for i in xrange(1, MAX_N):  # precompute
     for j in xrange(i+1):
-        if j > 0:
+        if j-1 >= 0:
             dp[i][j] += ((j-1)-1+1)*dp[i-1][j-1]  # merge any of (0,1)~(j-2,j-1), count j with EV(i-1, j-1)
             dp[i][j] += 1.0 + dp[i-1][j-1]        # merge (j-1,j), count j with 1 + EV(i-1, j-1)
-        if j < i:
+        if j <= i-1:
             dp[i][j] += 1.0 + dp[i-1][j]          # merge (j,j+1), count j with 1 + EV(i-1, j)
             dp[i][j] += (i-(j+2)+1)*dp[i-1][j]    # merge any of (j+1,j+2)~(i-1,i), count j with EV(i-1, j)
         dp[i][j] /= i  # i choices in i+1 cards
