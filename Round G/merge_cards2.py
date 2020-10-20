@@ -3,8 +3,10 @@
 # Google Kick Start 2020 Round G - Problem D. Merge Cards
 # https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000415054
 #
-# Time:  O(N^2), if we can neglate precomputing time  O(MAX_N^2), it's O(N)
-# Space: O(N^2), if we can neglate precomputing space O(MAX_N^2), it's O(1)
+# Time:  ctor:    O(MAX_N^2)
+#        runtime: O(N)
+# Space: ctor:    O(MAX_N^2)
+#        runtime: O(1)
 #
 # this solution is optimized from merge_cards.py
 #
