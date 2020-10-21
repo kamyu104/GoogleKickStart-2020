@@ -11,7 +11,7 @@ def merge_cards():
     N = input()
     A = map(int, raw_input().strip().split())
 
-    H = [1.0/n for n in xrange(1, N+1)]
+    H = [1.0/n for n in xrange(1, N+1)]  # harmonic progression
     prefix = [0]
     for h in H:
         prefix.append(prefix[-1]+h)
