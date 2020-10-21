@@ -15,7 +15,7 @@ def merge_cards():
     prefix = [0]
     for h in H:
         prefix.append(prefix[-1]+h)
-    # EV[i] = (1 + 1/2 + 1/3 + ... + 1/i) + (1/((N-1)-i) + ... + 1/3 + 1/2 + 1)
+    # EV[i] = (1/i + ... + 1/3 + 1/2 + 1) + (1 + 1/2 + 1/3 + ... + 1/((N-1)-i))
     return sum(a*(prefix[i]+prefix[(N-1)-i]) for i, a in enumerate(A))
 
 for case in xrange(input()):
