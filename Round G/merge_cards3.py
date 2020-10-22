@@ -11,7 +11,7 @@ def merge_cards():
     N = input()
     A = map(int, raw_input().strip().split())
 
-    prefix = [0]  # prefix sum of harmonic progression
+    prefix = [0.0]  # prefix sum of harmonic progression
     for n in xrange(1, N):
         prefix.append(prefix[-1]+1.0/n)
     # EV[i] = (1/i + ... + 1/3 + 1/2 + 1) + (1/((N-1)-i) + ... + 1/3 + 1/2 + 1)
