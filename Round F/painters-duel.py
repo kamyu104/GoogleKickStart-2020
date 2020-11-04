@@ -59,14 +59,13 @@ def maxmin(S, is_max, RA, PA, RB, PB, visited_mask, can_a_move, can_b_move, look
 
 def painters_duel():
     S, RA, PA, RB, PB, C = map(int, raw_input().strip().split())
-    lookup = {}
     visited_mask = 0
     for _ in xrange(C):
         R, P = map(int, raw_input().strip().split())
         visited_mask |= 1<<id(R, P)
     visited_mask |= 1<<id(RA, PA)
     visited_mask |= 1<<id(RB, PB)
-    return maxmin(S, True, RA, PA, RB, PB, visited_mask, True, True, lookup, float("-inf"), float("inf"))
+    return maxmin(S, True, RA, PA, RB, PB, visited_mask, True, True, {}, float("-inf"), float("inf"))
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, painters_duel())
