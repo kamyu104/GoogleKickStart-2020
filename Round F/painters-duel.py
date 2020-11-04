@@ -40,7 +40,7 @@ def maxmin(S, is_max, RA, PA, RB, PB, visited_mask, lookup, alpha, beta, can_a_m
                 for R, P in moves:
                     max_score = max(max_score, 1+maxmin(S, not is_max, R, P, RB, PB, visited_mask|(1<<id(R, P)), lookup, alpha, beta, can_a_move, can_b_move))
                     alpha = max(alpha, max_score)
-                    if alpha > beta:  # alpha beta pruning
+                    if (-1+alpha) >= beta:  # alpha beta pruning, sinc it can not update beta anymore
                         break
             lookup[is_max, RA, PA, RB, PB, visited_mask] = max_score
         else:
@@ -52,7 +52,7 @@ def maxmin(S, is_max, RA, PA, RB, PB, visited_mask, lookup, alpha, beta, can_a_m
                 for R, P in moves:
                     min_score = min(min_score, -1+maxmin(S, not is_max, RA, PA, R, P, visited_mask|(1<<id(R, P)), lookup, alpha, beta, can_a_move, can_b_move))
                     beta = min(beta, min_score)
-                    if beta < alpha:  # alpha beta pruning
+                    if (1+beta) <= alpha:  # alpha beta pruning, sinc it can not update alpha anymore
                         break
             lookup[is_max, RA, PA, RB, PB, visited_mask] = min_score
     return lookup[is_max, RA, PA, RB, PB, visited_mask]
