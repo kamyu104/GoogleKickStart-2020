@@ -27,7 +27,7 @@ def neighbors(S, R, P, visited_mask):
             result.append((R-1, P-1))
     return result
 
-def maxmin(S, is_max, RA, PA, RB, PB, visited_mask, lookup, alpha, beta, can_a_move, can_b_move):
+def maxmin(S, is_max, RA, PA, RB, PB, visited_mask, can_a_move, can_b_move, lookup, alpha, beta):
     if not can_a_move and not can_b_move:  # terminated state
         return 0
     if (is_max, RA, PA, RB, PB, visited_mask) not in lookup:  # memoization
@@ -35,10 +35,10 @@ def maxmin(S, is_max, RA, PA, RB, PB, visited_mask, lookup, alpha, beta, can_a_m
             max_score = float("-inf")
             moves = neighbors(S, RA, PA, visited_mask)
             if not moves:
-                max_score = maxmin(S, not is_max, RA, PA, RB, PB, visited_mask, lookup, alpha, beta, False, can_b_move)
+                max_score = maxmin(S, not is_max, RA, PA, RB, PB, visited_mask, False, can_b_move, lookup, alpha, beta)
             else:
                 for R, P in moves:
-                    max_score = max(max_score, 1+maxmin(S, not is_max, R, P, RB, PB, visited_mask|(1<<id(R, P)), lookup, alpha, beta, can_a_move, can_b_move))
+                    max_score = max(max_score, 1+maxmin(S, not is_max, R, P, RB, PB, visited_mask|(1<<id(R, P)), can_a_move, can_b_move, lookup, alpha, beta))
                     alpha = max(alpha, max_score)
                     if (-1+alpha) >= beta:  # alpha beta pruning, since it can not update parent's beta anymore
                         break
@@ -47,10 +47,10 @@ def maxmin(S, is_max, RA, PA, RB, PB, visited_mask, lookup, alpha, beta, can_a_m
             min_score = float("inf")
             moves = neighbors(S, RB, PB, visited_mask)
             if not moves:
-                min_score = maxmin(S, not is_max, RA, PA, RB, PB, visited_mask, lookup, alpha, beta, can_a_move, False)
+                min_score = maxmin(S, not is_max, RA, PA, RB, PB, visited_mask, can_a_move, False, lookup, alpha, beta)
             else:
                 for R, P in moves:
-                    min_score = min(min_score, -1+maxmin(S, not is_max, RA, PA, R, P, visited_mask|(1<<id(R, P)), lookup, alpha, beta, can_a_move, can_b_move))
+                    min_score = min(min_score, -1+maxmin(S, not is_max, RA, PA, R, P, visited_mask|(1<<id(R, P)), can_a_move, can_b_move, lookup, alpha, beta))
                     beta = min(beta, min_score)
                     if (1+beta) <= alpha:  # alpha beta pruning, since it can not update parent's alpha anymore
                         break
@@ -66,7 +66,7 @@ def painters_duel():
         visited_mask |= 1<<id(R, P)
     visited_mask |= 1<<id(RA, PA)
     visited_mask |= 1<<id(RB, PB)
-    return maxmin(S, True, RA, PA, RB, PB, visited_mask, lookup, float("-inf"), float("inf"), True, True)
+    return maxmin(S, True, RA, PA, RB, PB, visited_mask, True, True, lookup, float("-inf"), float("inf"))
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, painters_duel())
