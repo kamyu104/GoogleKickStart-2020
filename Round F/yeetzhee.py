@@ -13,7 +13,7 @@
 
 def memoization(A, curr, lookup):  # O(M) time for each state
     if tuple(curr) not in lookup:
-        count, total = 1.0, 0
+        count, total = 1.0, 0.0
         left = 0
         while left < len(curr):
             right = left
