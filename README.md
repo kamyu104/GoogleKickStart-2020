@@ -37,7 +37,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 |A| [ATM Queue](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4ed8)| [Python](./Round%20F/atm_queue.py)| _O(NlogN)_ | _O(1)_ | Easy | | Sort |
 |B| [Metal Harvest](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4b8b)| [Python](./Round%20F/metal_harvest.py) | _O(NlogN)_ | _O(1)_ | Easy | | Sort |
 |C| [Painters' Duel](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f47fb)| [Python](./Round%20F/painters_duel.py)| _O(2^(S^2))_ | _O(2^(S^2))_ | Medium | | Memoization, Alpha Beta Pruning |
-|D| [Yeetzhee](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4dea)| [Python](./Round%20F/yeetzhee.py) | _O(M * S)_ | _O(M * S)_ | Hard | | Math, Memoization |
+|D| [Yeetzhee](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4dea)| [Python](./Round%20F/yeetzhee.py) | _O(M * S)_ | _O(M * S)_ | Hard | | Math, Memoization, Greedy |
 
 ## Round G
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
