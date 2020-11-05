@@ -3,10 +3,10 @@
 # Google Kick Start 2020 Round F - Problem D. Yeehtzee
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4dea
 #
-# Time:  O(M * S), S is the number of states with sum <= N and length <= K, which is at most sum(partition(i) for i in [0..N])
+# Time:  O(M * S), S is the number of states with sum <= M and length <= K, which is at most sum(partition(i) for i in [0..M])
 # Space: O(M * S)
 #
-# if N = 50, number of states is at most 1,295,971
+# if M = 50, number of states is at most 1,295,971
 # see https://oeis.org/A000041/list, 
 # p[0..50] = [1, 1, 2, 3, 5, 7, 11, 15, 22, 30, 42, 56, 77, 101, 135, 176, 231, 297, 385, 490, 627, 792, 1002, 1255, 1575, 1958, 2436, 3010, 3718, 4565, 5604, 6842, 8349, 10143, 12310, 14883, 17977, 21637, 26015, 31185, 37338, 44583, 53174, 63261, 75175, 89134, 105558, 124754, 147273, 173525, 204226]
 #
