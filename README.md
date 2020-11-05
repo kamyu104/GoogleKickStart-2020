@@ -1,4 +1,4 @@
-# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-4%20%2F%2032-ff69b4.svg)
+# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-8%20%2F%2032-ff69b4.svg)
 
 Python solutions of Google Kick Start 2020. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A problem was marked as `Very Hard` means that it was an unsolved one during the contest and may not be that difficult.
 
@@ -34,6 +34,10 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 ## Round F
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [ATM Queue](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4ed8)| [Python](./Round%20F/atm_queue.py)| _O(NlogN)_ | _O(1)_ | Easy | | Sort |
+|B| [Metal Harvest](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4b8b)| [Python](./Round%20F/metal_harvest.py) | _O(NlogN)_ | _O(1)_ | Easy | | Sort |
+|C| [Painters' Duel](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f47fb)| [Python](./Round%20F/painters_duel.py)| _O(2^(S^2))_ | _O(2^(S^2))_ | Medium | | Memoization, Alpha Beta Pruning |
+|D| [Yeetzhee](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4dea)| [Python](./Round%20F/yeetzhee.py) | _O(M * S)_ | _O(M * S)_ | Hard | | Math, Memoization |
 
 ## Round G
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
