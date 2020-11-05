@@ -1,6 +1,6 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
-# Google Kick Start 2020 Round F - Problem D. Yeehtzee
+# Google Kick Start 2020 Round F - Problem D. Yeetzhee
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4dea
 #
 # Time:  O(M * S), S is the number of states with sum <= M and length <= K, which is at most sum(partition(i) for i in [0..M])
@@ -28,7 +28,7 @@ def memoization(A, curr, lookup):  # O(M) time for each state
         lookup[tuple(curr)] = count/total  # ev = (1+sum(pi*ei)) / sum(pi)
     return lookup[tuple(curr)]
 
-def yeehtzee():
+def yeetzhee():
     N, M, K = map(int, raw_input().strip().split())
     A = [0]*(M-K)
     for _ in xrange(K):
@@ -36,4 +36,4 @@ def yeehtzee():
     return memoization(A, [0]*M, {tuple(A):0.0})
 
 for case in xrange(input()):
-    print 'Case #%d: %s' % (case+1, yeehtzee())
+    print 'Case #%d: %s' % (case+1, yeetzhee())
