@@ -13,7 +13,7 @@
 
 def memoization(A, curr, lookup):
     if tuple(curr) not in lookup:
-        count, total = float(len(curr)), 0
+        count, total = 1.0, 0
         left = 0
         while left < len(curr):
             right = left
@@ -21,11 +21,11 @@ def memoization(A, curr, lookup):
                 right += 1
             if curr[right]+1 <= A[right]:
                 curr[right] += 1
-                count += memoization(A, curr, lookup)*(right-left+1)
+                count += memoization(A, curr, lookup)*(right-left+1)/len(A)
                 curr[right] -= 1
-                total += right-left+1
+                total += float(right-left+1)/len(A)
             left = right+1
-        lookup[tuple(curr)] = count/total
+        lookup[tuple(curr)] = count/total  # ev = (1+sum(pi*ei)/sum(pi))
     return lookup[tuple(curr)]
 
 def yeehtzee():
