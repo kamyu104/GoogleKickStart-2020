@@ -22,7 +22,7 @@ def neighbors(S, r, p):
 def maxmin(S, is_max, ra, pa, rb, pb, visited_mask, can_a_move, can_b_move, lookup, alpha, beta):
     if not can_a_move and not can_b_move:  # terminated state
         return 0
-    if (is_max, ra, pa, rb, pb, visited_mask) not in lookup:  # memoization
+    if (ra, pa, rb, pb, visited_mask) not in lookup:  # memoization
         if is_max:
             max_score = float("-inf")
             for r, p in neighbors(S, ra, pa):
@@ -34,7 +34,7 @@ def maxmin(S, is_max, ra, pa, rb, pb, visited_mask, can_a_move, can_b_move, look
                     break
             if max_score == float("-inf"):
                 max_score = maxmin(S, not is_max, ra, pa, rb, pb, visited_mask, False, can_b_move, lookup, alpha, beta)
-            lookup[is_max, ra, pa, rb, pb, visited_mask] = max_score
+            lookup[ra, pa, rb, pb, visited_mask] = max_score
         else:
             min_score = float("inf")
             for r, p in neighbors(S, rb, pb):
@@ -46,8 +46,8 @@ def maxmin(S, is_max, ra, pa, rb, pb, visited_mask, can_a_move, can_b_move, look
                     break
             if min_score == float("inf"):
                 min_score = maxmin(S, not is_max, ra, pa, rb, pb, visited_mask, can_a_move, False, lookup, alpha, beta)
-            lookup[is_max, ra, pa, rb, pb, visited_mask] = min_score
-    return lookup[is_max, ra, pa, rb, pb, visited_mask]
+            lookup[ra, pa, rb, pb, visited_mask] = min_score
+    return lookup[ra, pa, rb, pb, visited_mask]
 
 def painters_duel():
     S, RA, PA, RB, PB, C = map(int, raw_input().strip().split())
