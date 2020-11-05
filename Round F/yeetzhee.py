@@ -19,7 +19,7 @@ def memoization(A, curr, lookup):  # O(M) time for each state
             right = left
             while right+1 < len(curr) and curr[right+1] == curr[left]:
                 right += 1
-            if curr[right]+1 <= A[right]:
+            if curr[right]+1 <= A[right]:  # greedily fill and keep curr sorted
                 curr[right] += 1
                 count += memoization(A, curr, lookup)*(right-left+1)/len(A)
                 curr[right] -= 1
