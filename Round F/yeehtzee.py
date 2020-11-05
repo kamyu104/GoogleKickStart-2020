@@ -18,8 +18,8 @@ def memoization(A, curr, lookup):
             if curr[right]+1 <= A[right]:
                 curr[right] += 1
                 count += memoization(A, curr, lookup)*(right-left+1)
-                total += right-left+1
                 curr[right] -= 1
+                total += right-left+1
             left = right+1
         lookup[tuple(curr)] = count/total
     return lookup[tuple(curr)]
