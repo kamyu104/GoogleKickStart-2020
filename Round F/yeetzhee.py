@@ -25,7 +25,7 @@ def memoization(A, curr, lookup):
                 curr[right] -= 1
                 total += float(right-left+1)/len(A)
             left = right+1
-        lookup[tuple(curr)] = count/total  # ev = (1+sum(pi*ei))/sum(pi)
+        lookup[tuple(curr)] = count/total  # ev = (1+sum(pi*ei)) / sum(pi)
     return lookup[tuple(curr)]
 
 def yeehtzee():
