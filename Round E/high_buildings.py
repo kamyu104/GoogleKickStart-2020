@@ -14,6 +14,7 @@ def high_buildings():
     
     result = [N-1]*(A-C) + [N]*C + [N-1]*(B-C)
     if N-2 >= 1:
+        assert(len(result) >= 2)  # since A+B-C > 1
         result = result[:1] + [N-2]*(N-(A+B-C)) + result[1:]
     return " ".join(map(str, result))
 
