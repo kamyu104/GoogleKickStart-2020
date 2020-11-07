@@ -4,7 +4,7 @@
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bef73
 #
 # Time:  O(N)
-# Space: O(1)
+# Space: O(N)
 #
 
 def high_buildings():
