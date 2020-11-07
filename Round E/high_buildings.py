@@ -9,7 +9,7 @@
 
 def high_buildings():
     N, A, B, C = map(int, raw_input().strip().split())
-    if A+B-C > N or (N > 1 and A == 1 and B == 1):
+    if A+B-C > N or (N > 1 and A+B-C <= 1):
         return "IMPOSSIBLE"
     
     result = [N-1]*(A-C) + [N]*C + [N-1]*(B-C)
