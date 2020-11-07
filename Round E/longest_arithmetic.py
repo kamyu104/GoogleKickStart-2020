@@ -20,8 +20,7 @@ def longest_arithmetic():
         result = max(result, count)
         d = A[i+1]-A[i]
         count = 2
-    result = max(result, count)
-    return result
+    return max(result, count)
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, longest_arithmetic())
