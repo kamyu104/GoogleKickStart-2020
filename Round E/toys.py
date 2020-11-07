@@ -19,7 +19,7 @@ def toys():
     for i, (e, r) in enumerate(toys):
         curr_time += e
         heappush(max_heap, (-(e+r), i))
-        while max_heap and -max_heap[0][0] > total:
+        while max_heap and -max_heap[0][0] > total:  # greedily remove invalid toy i, s.t. Ri <= total-Ei for all i
             e = toys[heappop(max_heap)[1]][0]
             total -= e
             curr_time -= 2*e
