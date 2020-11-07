@@ -15,10 +15,11 @@ def longest_arithmetic():
     d , count = None, 0
     for i in xrange(N-1):
         if A[i+1]-A[i] != d:
+            result = max(result, count)
             d = A[i+1]-A[i]
             count = 1
         count += 1
-        result = max(result, count)
+    result = max(result, count)
     return result
 
 for case in xrange(input()):
