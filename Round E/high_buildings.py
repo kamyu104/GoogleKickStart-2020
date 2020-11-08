@@ -1,6 +1,6 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
-# Google Kick Start 2020 Round E - Problem A. High Buildings
+# Google Kick Start 2020 Round E - Problem B. High Buildings
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bef73
 #
 # Time:  O(N)

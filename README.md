@@ -1,4 +1,4 @@
-# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-8%20%2F%2032-ff69b4.svg)
+# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-12%20%2F%2032-ff69b4.svg)
 
 Python solutions of Google Kick Start 2020. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A problem was marked as `Very Hard` means that it was an unsolved one during the contest and may not be that difficult.
 
@@ -30,6 +30,10 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 ## Round E
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Longest Arithmetic](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bf4ed)| [Python](./Round%20E/longest_arithmetic.py)| _O(N)_ | _O(1)_ | Easy | | Array |
+|B| [High Buildings](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bef73)| [Python](./Round%20E/high_buildings.py) | _O(N)_ | _O(N)_ | Easy | | Construction |
+|C| [Toys](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bede9)| [Python](./Round%20E/toys.py)| _O(NlogN)_ | _O(N)_ | Medium | | Greedy, Heap |
+|D| [Golden Stone](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bef29)| [Python](./Round%20E/yeetzhee.py) | _O((N * S + M * S + R * N) * log(N * S))_ | _O(N * S + N * R + M)_ | Hard | | Dijkstra's Algorithm |
 
 ## Round F
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
