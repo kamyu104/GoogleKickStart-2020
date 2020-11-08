@@ -36,7 +36,6 @@ def golden_stone():
     lookup = [[False for _ in xrange(S)] for _ in xrange(N)]  # Space: O(N * S)
     while min_heap:
         d, u, s = heappop(min_heap)
-        assert(d >= stone_dist[u][s])
         if lookup[u][s]:
             continue
         lookup[u][s] = True
