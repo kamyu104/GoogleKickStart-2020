@@ -36,16 +36,17 @@ def golden_stone():
         for v in adj[u]:  # Time: O((|V| + |E|) * log|V|) = O((N * S + M * S) * log(N * S))
             if lookup[v][s]:
                 continue
-            if cost[u][s]+1 < cost[v][s]:
-                cost[v][s] = cost[u][s]+1
-                heappush(min_heap, (cost[v][s], v, s))
+            new_cost = cost[u][s]+1
+            if new_cost < cost[v][s]:
+                cost[v][s] = new_cost
+                heappush(min_heap, (new_cost, v, s))
         for r in R:  # Time: O(R * N * log|V|) = O(R * N * log(N * S))
             if lookup[u][r[-1]]:
                 continue
-            total = sum(cost[u][r[i]] for i in xrange(len(r)-1))  # Time: O(K) = O(3)
-            if total < cost[u][r[-1]]:
-                cost[u][r[-1]] = total
-                heappush(min_heap, (cost[u][r[-1]], u, r[-1]))
+            new_cost = sum(cost[u][r[i]] for i in xrange(len(r)-1))  # Time: O(K) = O(3)
+            if new_cost < cost[u][r[-1]]:
+                cost[u][r[-1]] = new_cost
+                heappush(min_heap, (new_cost, u, r[-1]))
     result = min(cost[u][0] for u in xrange(N))
     return result if result < INF else -1
 
