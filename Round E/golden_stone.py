@@ -11,13 +11,13 @@ from heapq import heappush, heappop
 
 def golden_stone():
     N, M, S, R = map(int, raw_input().strip().split())
-    adj = [set() for _ in xrange(N)]
+    adj = [[] for _ in xrange(N)]
     for _ in xrange(M):
         U, V = map(int, raw_input().strip().split())
         U -= 1
         V -= 1
-        adj[U].add(V)
-        adj[V].add(U)
+        adj[U].append(V)
+        adj[V].append(U)
     C = [map(lambda x: int(x)-1, raw_input().strip().split()[1:]) for _ in xrange(N)]
     R = [map(lambda x: int(x)-1, raw_input().strip().split()[1:]) for _ in xrange(R)]
 
