@@ -33,7 +33,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 |A| [Longest Arithmetic](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bf4ed)| [Python](./Round%20E/longest_arithmetic.py)| _O(N)_ | _O(1)_ | Easy | | Array |
 |B| [High Buildings](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bef73)| [Python](./Round%20E/high_buildings.py) | _O(N)_ | _O(N)_ | Easy | | Construction |
 |C| [Toys](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bede9)| [Python](./Round%20E/toys.py)| _O(NlogN)_ | _O(N)_ | Medium | | Greedy, Heap |
-|D| [Golden Stone](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bef29)| [Python](./Round%20E/golden_stone.py) [Python](./Round%20E/golden_stone2.py) | _O((N * S + M * S + R * N) * log(N * S))_ | _O(N * S + N * R + M)_ | Hard | | Dijkstra's Algorithm |
+|D| [Golden Stone](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bef29)| [Python](./Round%20E/golden_stone.py) [Python](./Round%20E/golden_stone2.py) | _O((N * S + M * S + R * N) * log(N * S))_ | _O(N * S + M)_ | Hard | | Dijkstra's Algorithm |
 
 ## Round F
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |

@@ -4,7 +4,7 @@
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bef29
 #
 # Time:  O((N * S + M * S + R * N) * log(N * S))
-# Space: O(N * S + N * R + M)
+# Space: O(N * S + M)
 #
 
 from heapq import heappush, heappop
@@ -17,22 +17,18 @@ def golden_stone():
         adj[U].append(V)
         adj[V].append(U)
     C = [map(lambda x: int(x)-1, raw_input().strip().split()[1:]) for _ in xrange(N)]
-    recipe_count = [0]*R
+    recipes = []
     recipe_adj = [[] for _ in xrange(S)]  # Space: O(S + K * R) = O(S + 3 * R)
-    recipe_out = [0]*R
     for r in xrange(R):
-        recipe = map(lambda x: int(x)-1, raw_input().strip().split())[1:]
-        recipe_out[r] = recipe.pop()
-        for s in recipe:
+        recipes.append(map(lambda x: int(x)-1, raw_input().strip().split())[1:])
+        for s in recipes[-1]:
             recipe_adj[s].append(r)
-        recipe_count[r] = len(recipe)
     stone_dist = [[INF for _ in xrange(S)] for _ in xrange(N)]  # Space: O(N * S)
     min_heap = []  # Space: O(N * S)
     for u in xrange(N):
         for s in C[u]:
             stone_dist[u][s] = 0
             heappush(min_heap, (0, u, s))
-    recipe_dist = [[[0, 0] for _ in xrange(R)] for _ in xrange(N)]  # Space: O(N * R)
     lookup = [[False for _ in xrange(S)] for _ in xrange(N)]  # Space: O(N * S)
     while min_heap:
         d, u, s = heappop(min_heap)
@@ -47,15 +43,13 @@ def golden_stone():
                 stone_dist[v][s] = nd
                 heappush(min_heap, (nd, v, s))
         for r in recipe_adj[s]:  # Time: O(K * R * N * log|V|) = O(3 * R * N * log(N * S))
-            if lookup[u][recipe_out[r]]:
+            r = recipes[r]
+            if lookup[u][r[-1]]:
                 continue
-            recipe_dist[u][r][0] += 1
-            recipe_dist[u][r][1] += d
-            if recipe_dist[u][r][0] == recipe_count[r]:  # able to apply recipe
-                nd = recipe_dist[u][r][1]
-                if nd < stone_dist[u][recipe_out[r]]:
-                    stone_dist[u][recipe_out[r]] = nd
-                    heappush(min_heap, (nd, u, recipe_out[r]))
+            nd = sum(stone_dist[u][r[i]] for i in xrange(len(r)-1))
+            if nd < stone_dist[u][r[-1]]:
+                stone_dist[u][r[-1]] = nd
+                heappush(min_heap, (nd, u, r[-1]))
     result = min(stone_dist[u][0] for u in xrange(N))
     return result if result < INF else -1
 
