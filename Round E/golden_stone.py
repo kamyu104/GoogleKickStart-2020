@@ -47,11 +47,11 @@ def golden_stone():
                 stone_dist[v][s] = nd
                 heappush(min_heap, (nd, v, s))
         for r in recipe_adj[s]:  # Time: O(K * R * N * log|V|) = O(3 * R * N * log(N * S))
+            if lookup[u][recipe_out[r]]:
+                continue
             recipe_dist[u][r][0] += 1
             recipe_dist[u][r][1] += d
             if recipe_dist[u][r][0] == recipe_count[r]:  # able to apply recipe
-                if lookup[u][recipe_out[r]]:
-                    continue
                 nd = recipe_dist[u][r][1]
                 if nd < stone_dist[u][recipe_out[r]]:
                     stone_dist[u][recipe_out[r]] = nd
