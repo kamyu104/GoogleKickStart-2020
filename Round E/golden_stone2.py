@@ -23,6 +23,7 @@ def golden_stone():
         recipes.append(map(lambda x: int(x)-1, raw_input().strip().split())[1:])
         for s in recipes[-1]:
             recipe_adj[s].append(r)
+
     stone_dist = [[INF for _ in xrange(S)] for _ in xrange(N)]  # Space: O(N * S)
     min_heap = []  # Space: O(N * S)
     for u in xrange(N):

@@ -26,6 +26,7 @@ def golden_stone():
         for s in recipe:
             recipe_adj[s].append(r)
         recipe_count[r] = len(recipe)
+
     stone_dist = [[INF for _ in xrange(S)] for _ in xrange(N)]  # Space: O(N * S)
     min_heap = []  # Space: O(N * S)
     for u in xrange(N):
