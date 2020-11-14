@@ -10,10 +10,10 @@
 from itertools import izip
 from functools import partial
 
-def iter_dfs(adj, A, B):
+def iter_dfs(children, A, B):
     def divide(curr, d):
         stk.append(partial(postprocess, curr, d))
-        for child in reversed(adj[curr]):
+        for child in reversed(children[curr]):
             stk.append(partial(divide, child, d+1))
         stk.append(partial(preprocess, curr, d))
 
@@ -27,7 +27,7 @@ def iter_dfs(adj, A, B):
         A_cnt[curr] += A_prefix[d%A]
         B_cnt[curr] += B_prefix[d%B]
 
-    A_prefix, B_prefix, A_cnt, B_cnt = [0]*len(adj), [0]*len(adj), [0]*len(adj), [0]*len(adj)
+    A_prefix, B_prefix, A_cnt, B_cnt = [0]*len(children), [0]*len(children), [0]*len(children), [0]*len(children)
     stk = []
     stk.append(partial(divide, 0, 0))
     while stk:
@@ -36,10 +36,10 @@ def iter_dfs(adj, A, B):
 
 def beauty_of_tree():
     N, A, B = map(int, raw_input().strip().split())
-    adj = [[] for _ in xrange(N)]
+    children = [[] for _ in xrange(N)]
     for i, p in enumerate(map(int, raw_input().strip().split()), 1):
-        adj[p-1].append(i)
-    return float(sum((a+b)*N - a*b for a, b in izip(*iter_dfs(adj, A, B))))/N/N
+        children[p-1].append(i)
+    return float(sum((a+b)*N - a*b for a, b in izip(*iter_dfs(children, A, B))))/N/N
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, beauty_of_tree())
