@@ -48,7 +48,7 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
     def size(self, curr):
         return self.R[curr]-self.L[curr]+1
     
-    def binary_lift(self, a, k):
+    def binary_lift(self, a, k):  # Time: O(logN)
         if self.size(a) >= k:
             return a 
         for i in reversed(xrange(len(self.P[a]))):  # O(logN)
@@ -59,7 +59,7 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
 
 # Template:
 # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/maximum-binary-tree.py
-def build_cartesian_tree(nums):
+def build_cartesian_tree(nums):  # Time: O(N), Space: O(N)
     dec_stk = []
     children = [[-1, -1] for _ in xrange(len(nums))]
     for i, num in enumerate(nums):
@@ -74,17 +74,17 @@ def locked_doors():
     N, Q = map(int, raw_input().strip().split())
     D = map(int, raw_input().strip().split())
 
-    root, children = build_cartesian_tree(D)
-    tree_infos = TreeInfos(root, children)
+    root, children = build_cartesian_tree(D)  # Time: O(N)
+    tree_infos = TreeInfos(root, children)    # Time: O(NlogN)
     result = []
-    for _ in xrange(Q):
+    for _ in xrange(Q):                       # Time: O(QlogN)
         S, K = map(int, raw_input().strip().split())
         if K == 1:
             result.append(S)
             continue
         K -= 1
         X = S-1 if S == N or (S > 1 and D[(S-1)-1] < D[S-1]) else S
-        Y = tree_infos.binary_lift(X-1, K)+1
+        Y = tree_infos.binary_lift(X-1, K)+1  # Time: O(logN)
         if X == Y:
             result.append(S-K if X == S-1 else S+K)
         else:
