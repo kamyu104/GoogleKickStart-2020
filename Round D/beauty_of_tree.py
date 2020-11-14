@@ -14,8 +14,8 @@ def iter_dfs(adj, A, B):
     def divide(curr, d):
         prev_A_prefix, prev_B_prefix = [0], [0]
         stk.append(partial(postprocess, curr, d, prev_A_prefix, prev_B_prefix))
-        for node in reversed(adj[curr]):
-            stk.append(partial(divide, node, d+1))
+        for child in reversed(adj[curr]):
+            stk.append(partial(divide, child, d+1))
         stk.append(partial(preprocess, d, prev_A_prefix, prev_B_prefix))
 
     def preprocess(d, prev_A_prefix, prev_B_prefix):
