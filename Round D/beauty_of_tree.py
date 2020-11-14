@@ -1,6 +1,6 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
-# Google Code Jam 2020 Round D - Problem C. Beauty of Truee
+# Google Code Jam 2020 Round D - Problem C. Beauty of Tree
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000386edd
 #
 # Time:  O(N)
