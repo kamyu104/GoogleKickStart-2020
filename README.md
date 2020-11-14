@@ -27,8 +27,8 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Record Breaker](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000387171)| [Python](./Round%20D/record_breaker.py)| _O(N)_ | _O(1)_ | Easy | | Array |
-|B| [Alien Piano](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000387174)| [Python](./Round%20D/alien_piano.py) | _O(N)_ | _O(1)_ | Easy | | Greedy |
-|C| [Beauty of Tree](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff47/00000000003bede9)| [Python](./Round%20D/beauty_of_tree.py)| _O(N)_ | _O(N)_ | Medium | | DFS, Math |
+|B| [Alien Piano](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000387174)| [Python](./Round%20D/alien_piano.py) | _O(K)_ | _O(1)_ | Easy | | Greedy |
+|C| [Beauty of Tree](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000386edd)| [Python](./Round%20D/beauty_of_tree.py)| _O(N)_ | _O(N)_ | Medium | | DFS, Math |
 |D| [Locked Doors](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000386d5c)| [PyPy2](./Round%20E/locked_doors.py) | _O(NlogN + QlogN)_ | _O(N)_ | Hard | | Cartesian Tree, Binary Lifting |
 
 ## Round E
