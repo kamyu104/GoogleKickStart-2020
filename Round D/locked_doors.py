@@ -1,7 +1,7 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
 # Google Code Jam 2020 Round D - Problem D. Locked Doors
-# https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000386edd
+# https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff08/0000000000386d5c
 #
 # Time:  O(NlogN + QlogN), pass in PyPy2 but Python2
 # Space: O(N)
