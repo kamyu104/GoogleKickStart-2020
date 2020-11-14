@@ -12,11 +12,11 @@ def alien_piano():
     A = map(int, raw_input().strip().split())
 
     result = inc_cnt = dec_cnt = 0
-    for i, x in enumerate(A):
-        if x > A[i-1]:
+    for i in xrange(1, len(A)):
+        if A[i] > A[i-1]:
             inc_cnt += 1
             dec_cnt = 0
-        elif x < A[i-1]:
+        elif A[i] < A[i-1]:
             dec_cnt += 1
             inc_cnt = 0
         else:
