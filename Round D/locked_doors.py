@@ -60,15 +60,15 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
 # Template:
 # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/maximum-binary-tree.py
 def build_cartesian_tree(nums):  # Time: O(N), Space: O(N)
-    dec_stk = []
+    decreasing_stk = []
     children = [[-1, -1] for _ in xrange(len(nums))]
     for i, num in enumerate(nums):
-        while dec_stk and nums[dec_stk[-1]] < num:
-            children[i][0] = dec_stk.pop()
-        if dec_stk:
-            children[dec_stk[-1]][1] = i
-        dec_stk.append(i)
-    return dec_stk[0], children
+        while decreasing_stk and nums[decreasing_stk[-1]] < num:
+            children[i][0] = decreasing_stk.pop()
+        if decreasing_stk:
+            children[decreasing_stk[-1]][1] = i
+        decreasing_stk.append(i)
+    return decreasing_stk[0], children
 
 def locked_doors():
     N, Q = map(int, raw_input().strip().split())
