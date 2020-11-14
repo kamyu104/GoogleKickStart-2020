@@ -12,21 +12,20 @@ from functools import partial
 
 def iter_dfs(adj, A, B):
     def divide(curr, d):
-        prev_A_prefix, prev_B_prefix = [0], [0]
-        stk.append(partial(postprocess, curr, d, prev_A_prefix, prev_B_prefix))
+        stk.append(partial(postprocess, curr, d))
         for child in reversed(adj[curr]):
             stk.append(partial(divide, child, d+1))
-        stk.append(partial(preprocess, d, prev_A_prefix, prev_B_prefix))
+        stk.append(partial(preprocess, curr, d))
 
-    def preprocess(d, prev_A_prefix, prev_B_prefix):
-        prev_A_prefix[0] = A_prefix[d%A]
-        prev_B_prefix[0] = B_prefix[d%B]
+    def preprocess(curr, d):
+        A_cnt[curr] -= A_prefix[d%A]
+        B_cnt[curr] -= B_prefix[d%B]
         A_prefix[d%A] += 1
         B_prefix[d%B] += 1
 
-    def postprocess(curr, d, prev_A_prefix, prev_B_prefix):
-        A_cnt[curr] = A_prefix[d%A]-prev_A_prefix[0]
-        B_cnt[curr] = B_prefix[d%B]-prev_B_prefix[0]
+    def postprocess(curr, d):
+        A_cnt[curr] += A_prefix[d%A]
+        B_cnt[curr] += B_prefix[d%B]
 
     A_prefix, B_prefix, A_cnt, B_cnt = [0]*len(adj), [0]*len(adj), [0]*len(adj), [0]*len(adj)
     stk = []
