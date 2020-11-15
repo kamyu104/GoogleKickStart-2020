@@ -1,4 +1,4 @@
-# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-16%20%2F%2032-ff69b4.svg)
+# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-20%20%2F%2032-ff69b4.svg)
 
 Python solutions of Google Kick Start 2020. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A problem was marked as `Very Hard` means that it was an unsolved one during the contest and may not be that difficult.
 
@@ -58,3 +58,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 ## Round H
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Retype](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043adc7)| [Python](./Round%20H/retype.py)| _O(1)_ | _O(1)_ | Easy | | Math |
+|B| [Boring Numbers](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043b0c6)| [Python](./Round%20H/boring_numbers.py)| _O(logR)_ | _O(1)_ | Easy | | Math |
+|C| [Rugby](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043b027)| [Python](./Round%20H/rugby.py)| _O(NlogN)_ | _O(N)_ | Medium | | Math |
+|D| [Friends](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043aee7)| [PyPy](./Round%20H/friends.py) [PyPy](./Round%20H/friends.py) | _O(A^3 + L^2 * (N + Q))_ | _O(A^2)_ | Medium | | Math, DP, Precompute, Prefix Sum |

@@ -4,7 +4,7 @@
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043b027
 #
 # Time:  O(A^3 + L^2 * (N + Q)) = O(N + Q) since O(A) = O(26), O(L) = O(20), pass in PyPy2 but Python2
-# Space: O(N)
+# Space: O(A^2)
 #
 
 def floyd_warshall(dist):
@@ -17,10 +17,8 @@ def friends():
     N, Q = map(int, raw_input().strip().split())
     S = raw_input().strip().split()
 
-    masks = [0]*N
     dist = [[0 if i == j else INF for j in xrange(MAX_ALPHA)] for i in xrange(MAX_ALPHA)]
     for k, s in enumerate(S):  # Time: O(L^2 * N)
-        masks[k] = reduce(lambda x, y: x|y, (1<<(ord(c)-ord('A')) for c in s))
         for i in s:
             for j in s:
                 dist[ord(i)-ord('A')][ord(j)-ord('A')] = min(dist[ord(i)-ord('A')][ord(j)-ord('A')], 1)
