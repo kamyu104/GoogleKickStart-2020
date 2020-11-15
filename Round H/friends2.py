@@ -17,7 +17,7 @@ def friends():
     N, Q = map(int, raw_input().strip().split())
     S = raw_input().strip().split()
 
-    dist = [[0 if i == j else INF for j in xrange(MAX_ALPHA)] for i in xrange(MAX_ALPHA)]
+    dist = [[0 if i == j else INF for j in xrange(ALPHA_SIZE)] for i in xrange(ALPHA_SIZE)]
     for k, s in enumerate(S):  # Time: O(L^2 * N)
         for i in s:
             for j in s:
@@ -38,7 +38,7 @@ def friends():
             result[-1] = -1
     return " ".join(map(str, result))
 
-MAX_ALPHA = 26
-INF = MAX_ALPHA+1
+ALPHA_SIZE = 26
+INF = ALPHA_SIZE+1
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, friends())

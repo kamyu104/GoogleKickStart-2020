@@ -18,12 +18,12 @@ def friends():
     S = raw_input().strip().split()
 
     masks = [0]*N
-    dist = [[0 if i == j else INF for j in xrange(MAX_ALPHA)] for i in xrange(MAX_ALPHA)]
+    dist = [[0 if i == j else INF for j in xrange(ALPHA_SIZE)] for i in xrange(ALPHA_SIZE)]
     for k, s in enumerate(S):  # Time: O(A^2 * N)
         masks[k] = reduce(lambda x, y: x|y, (1<<(ord(c)-ord('A')) for c in s))
-        for i in xrange(MAX_ALPHA):
+        for i in xrange(ALPHA_SIZE):
             if masks[k] & POW[i]:
-                for j in xrange(MAX_ALPHA):
+                for j in xrange(ALPHA_SIZE):
                     if i == j:
                         continue
                     if masks[k] & POW[j]:
@@ -35,19 +35,19 @@ def friends():
         X -= 1
         Y -= 1
         result.append(INF)
-        for i in xrange(MAX_ALPHA):
+        for i in xrange(ALPHA_SIZE):
             if masks[X] & POW[i]:
-                for j in xrange(MAX_ALPHA):
+                for j in xrange(ALPHA_SIZE):
                     if masks[Y] & POW[j]:
                         result[-1] = min(result[-1], dist[i][j]+2)
         if result[-1] >= INF:
             result[-1] = -1
     return " ".join(map(str, result))
 
-MAX_ALPHA = 26
-INF = MAX_ALPHA+1
+ALPHA_SIZE = 26
+INF = ALPHA_SIZE+1
 POW = [1]
-for i in xrange(MAX_ALPHA-1):
+for i in xrange(ALPHA_SIZE-1):
     POW.append(POW[-1]<<1)
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, friends())
