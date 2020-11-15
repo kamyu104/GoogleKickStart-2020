@@ -22,14 +22,16 @@ def friends():
     masks = [0]*N
     dist = [[0 if i == j else INF for j in xrange(ALPHA_SIZE)] for i in xrange(ALPHA_SIZE)]
     for k, s in enumerate(S):  # Time: O(A^2 * N)
-        masks[k] = reduce(lambda x, y: x|y, (1<<(ord(c)-ord('A')) for c in s))
-        for i in xrange(ALPHA_SIZE):
-            if masks[k] & POW[i]:
-                for j in xrange(ALPHA_SIZE):
-                    if i == j:
-                        continue
-                    if masks[k] & POW[j]:
-                        dist[i][j] = 1
+        mask_i = masks[k] = reduce(lambda x, y: x|y, (1<<(ord(c)-ord('A')) for c in s))
+        while mask_i:
+            i = LOG[mask_i & -mask_i]
+            mask_j = masks[k]
+            while mask_j:
+                j = LOG[mask_j & -mask_j]
+                if i != j:
+                    dist[i][j] = 1
+                mask_j -= mask_j & -mask_j
+            mask_i -= mask_i & -mask_i
     floyd_warshall(dist)  # Time: O(A^3)
     result = []
     for _ in xrange(Q):  # Time: O(A^2 * Q)
@@ -37,19 +39,24 @@ def friends():
         X -= 1
         Y -= 1
         result.append(INF)
-        for i in xrange(ALPHA_SIZE):
-            if masks[X] & POW[i]:
-                for j in xrange(ALPHA_SIZE):
-                    if masks[Y] & POW[j]:
-                        result[-1] = min(result[-1], dist[i][j]+2)
+        mask_i = masks[X]
+        while mask_i:
+            i = LOG[mask_i & -mask_i]
+            mask_j = masks[Y]
+            while mask_j:
+                j = LOG[mask_j & -mask_j]
+                result[-1] = min(result[-1], dist[i][j]+2)
+                mask_j -= mask_j & -mask_j
+            mask_i -= mask_i & -mask_i
         if result[-1] >= INF:
             result[-1] = -1
     return " ".join(map(str, result))
 
 ALPHA_SIZE = 26
 INF = ALPHA_SIZE+1
-POW = [1]
-for i in xrange(ALPHA_SIZE-1):
-    POW.append(POW[-1]<<1)
+LOG, base = {}, 1
+for i in xrange(ALPHA_SIZE):
+    LOG[base] = i
+    base <<= 1
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, friends())
