@@ -10,7 +10,7 @@
 def f(x):
     digits = map(int, list(str(x)))  # abcdefg
     base = 5**(len(digits)-1)
-    result = (5*base-5)//(5-1)  # count 0xxxxxx, 00xxxxx, 000xxxx, ..., 000000x => (5^len(digit)-5)/(5-1)
+    result = (5*base-5)//(5-1)  # count 0xxxxxx, 00xxxxx, 000xxxx, ..., 000000x => (5^len(digits)-5)/(5-1)
     for i, digit in enumerate(digits, 1):
         result += (digit+1-i%2)//2 * base  # count ab?xxxx
         if i%2 != digit%2:
