@@ -9,18 +9,15 @@
 
 def f(x):
     digits = map(int, list(str(x)))  # abcdefg
-    result = 0
     base = 5**(len(digits)-1)
-    is_prefix_valid = True
+    result = (5*base-5)//(5-1)  # count 0xxxxxx, 00xxxxx, 000xxxx, ..., 000000x => (5^len(digit)-5)/(5-1)
     for i, digit in enumerate(digits, 1):
-        if is_prefix_valid:  # ab is boring
-            result += (digit+1-i%2)//2 * base  # count ab?xxxx
-            if i%2 != digit%2:
-                is_prefix_valid = False
-        result += base   # count 000xxxx
+        result += (digit+1-i%2)//2 * base  # count ab?xxxx
+        if i%2 != digit%2:
+            break
         base //= 5
-    if is_prefix_valid:  # count abcdefg
-        result += 1
+    else:
+        result += 1  # count abcdefg
     return result
 
 def boring_numbers():
