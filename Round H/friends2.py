@@ -4,7 +4,7 @@
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043b027
 #
 # Time:  O(A^3 + L^2 * (N + Q)) = O(N + Q) since O(A) = O(26), O(L) = O(20), pass in PyPy2 but Python2
-# Space: O(A^2)
+# Space: O(A^2) = O(1)
 #
 
 def floyd_warshall(dist):
