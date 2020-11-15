@@ -21,7 +21,9 @@ def friends():
     for k, s in enumerate(S):  # Time: O(L^2 * N)
         for i in s:
             for j in s:
-                dist[ord(i)-ord('A')][ord(j)-ord('A')] = min(dist[ord(i)-ord('A')][ord(j)-ord('A')], 1)
+                if i == j:
+                    continue
+                dist[ord(i)-ord('A')][ord(j)-ord('A')] = 1
     floyd_warshall(dist)  # Time: O(A^3)
     result = []
     for _ in xrange(Q):  # Time: O(L^2 * Q)

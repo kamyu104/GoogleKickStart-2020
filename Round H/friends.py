@@ -24,8 +24,10 @@ def friends():
         for i in xrange(MAX_ALPHA):
             if masks[k] & POW[i]:
                 for j in xrange(MAX_ALPHA):
+                    if i == j:
+                        continue
                     if masks[k] & POW[j]:
-                        dist[i][j] = min(dist[i][j], 1)
+                        dist[i][j] = 1
     floyd_warshall(dist)  # Time: O(A^3)
     result = []
     for _ in xrange(Q):  # Time: O(A^2 * Q)
