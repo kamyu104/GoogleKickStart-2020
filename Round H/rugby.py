@@ -15,9 +15,9 @@ def rugby():
 
     X.sort()
     X = [x-i for i, x in enumerate(X)]
-    X.sort()
-    Y.sort()
-    return sum(abs(x-X[(N-1)//2]) for x in X) + sum(abs(y-Y[(N-1)//2]) for y in Y)
+    X.sort()  # find target to minimize sum(abs(target-(x-i)) for i, x in enumerate(X))
+    Y.sort()  # find target to minimize sum(abs(target-y      for i, y in enumerate(Y))
+    return sum(abs(x-X[(N-1)//2]) for x in X) + sum(abs(y-Y[(N-1)//2]) for y in Y)  # targets are medians
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, rugby())
