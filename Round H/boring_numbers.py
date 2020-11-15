@@ -1,6 +1,6 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
-# Google Kick Start 2020 Round H - Problem B. Boring Numbers
+# Google Kick Start 2020 Round G - Problem B. Boring Numbers
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043b0c6
 #
 # Time:  O(logR)
