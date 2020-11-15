@@ -6,6 +6,8 @@
 # Time:  O(A^3 + A^2 * (N + Q)) = O(N + Q) since O(A) = O(26), pass in PyPy2 but Python2
 # Space: O(N * A + A^2)
 #
+# if A is much smaller than L, this solution would be better
+#
 
 def floyd_warshall(dist):
      for k in xrange(len(dist)):
