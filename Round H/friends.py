@@ -1,7 +1,7 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
 # Google Kick Start 2020 Round H - Problem D. Friends
-# https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043b027
+# https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043aee7
 #
 # Time:  O(A^3 + A^2 * (N + Q)) = O(N + Q) since O(A) = O(26), pass in PyPy2 but Python2
 # Space: O(N + A^2)
