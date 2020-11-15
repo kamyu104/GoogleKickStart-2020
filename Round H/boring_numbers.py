@@ -12,14 +12,14 @@ def f(x):
     result = 0
     base = 5**(len(digits)-1)
     is_prefix_valid = True
-    for i, digit in enumerate(digits):
-        if is_prefix_valid:
-            result += (digit+i%2)//2 * base  # ab?xxxx
-            if i%2 == digit%2:
+    for i, digit in enumerate(digits, 1):
+        if is_prefix_valid:  # ab is boring
+            result += (digit+1-i%2)//2 * base  # count ab?xxxx
+            if i%2 != digit%2:
                 is_prefix_valid = False
-        result += base  # 000xxxx
+        result += base   # count 000xxxx
         base //= 5
-    if is_prefix_valid:
+    if is_prefix_valid:  # count abcdefg
         result += 1
     return result
 
