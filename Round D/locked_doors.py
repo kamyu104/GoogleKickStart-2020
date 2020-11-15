@@ -14,7 +14,6 @@ from functools import partial
 class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of nodes
     def __init__(self, root, children):
         def preprocess(curr, parent):
-            D[curr] = 1 if parent == -1 else D[parent]+1  # depth of the node i
             if parent != -1:
                 P[curr].append(parent)  # ancestors of the node i
             i = 0
@@ -37,13 +36,13 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
             R[curr] = C[0]  # the subtree of the node i is represented by traversal index L[i]..R[i]
 
         N = len(children)
-        L, R, D, P, C = [0]*N, [0]*N, [0]*N, [[] for _ in xrange(N)], [-1]
+        L, R, P, C = [0]*N, [0]*N, [[] for _ in xrange(N)], [-1]
         stk = []
         stk.append(partial(divide, root, -1))
         while stk:
             stk.pop()()
         assert(C[0] == N-1)
-        self.L, self.R, self.D, self.P = L, R, D, P
+        self.L, self.R, self.P = L, R, P
 
     def size(self, curr):
         return self.R[curr]-self.L[curr]+1
