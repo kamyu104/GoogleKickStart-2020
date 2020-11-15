@@ -13,13 +13,11 @@ def rugby():
     for i in xrange(N):
         X[i], Y[i] = map(int, raw_input().strip().split())
 
-    Y.sort()
-    result = sum(abs(y-Y[(N-1)//2]) for y in Y)
     X.sort()
     X = [x-i for i, x in enumerate(X)]
     X.sort()
-    result += sum(abs(x-X[(N-1)//2]) for x in X)
-    return result
+    Y.sort()
+    return  sum(abs(x-X[(N-1)//2]) for x in X) + sum(abs(y-Y[(N-1)//2]) for y in Y)
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, rugby())
