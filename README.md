@@ -61,4 +61,4 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 |A| [Retype](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043adc7)| [Python](./Round%20H/retype.py)| _O(1)_ | _O(1)_ | Easy | | Math |
 |B| [Boring Numbers](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043b0c6)| [Python](./Round%20H/boring_numbers.py)| _O(logR)_ | _O(1)_ | Easy | | Math |
 |C| [Rugby](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043b027)| [Python](./Round%20H/rugby.py)| _O(NlogN)_ | _O(N)_ | Medium | | Math |
-|D| [Friends](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043aee7)| [PyPy](./Round%20H/friends.py) [PyPy](./Round%20H/friends.py) | _O(A^3 + L^2 * (N + Q))_ | _O(A^2)_ | Medium | | Floyd-Warshall Algorithm |
+|D| [Friends](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff49/000000000043aee7)| [PyPy](./Round%20H/friends.py) [PyPy](./Round%20H/friends2.py) | _O(A^3 + L^2 * (N + Q))_ | _O(A^2)_ | Medium | | Floyd-Warshall Algorithm |
