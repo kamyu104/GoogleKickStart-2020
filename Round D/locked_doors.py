@@ -54,7 +54,7 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
         for i in reversed(xrange(len(self.P[a]))):  # O(logN)
             if i < len(self.P[a]) and self.size(self.P[a][i]) < k:
                 a = self.P[a][i]
-        assert(self.P[a])
+        assert(self.P[a] and self.size(self.P[a][0]) >= k)
         return self.P[a][0]
 
 # Template:
