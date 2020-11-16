@@ -16,13 +16,11 @@ def f(x):
         if i%2 != digit%2:
             break
         base //= 5
-    else:
-        result += 1  # count abcdefg
     return result
 
 def boring_numbers():
     L, R = map(int, raw_input().strip().split())
-    return f(R)-f(L-1)
+    return f(R+1)-f(L)
 
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, boring_numbers())
