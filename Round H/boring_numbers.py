@@ -7,7 +7,7 @@
 # Space: O(1)
 #
 
-def f(x):
+def f(x):  # count boring numbers in [0, x)
     digits = map(int, list(str(x)))  # abcdefg
     base = 5**(len(digits)-1)
     result = (5*base-5)//(5-1)  # count 0xxxxxx, 00xxxxx, 000xxxx, ..., 000000x => (5^len(digits)-5)/(5-1)
