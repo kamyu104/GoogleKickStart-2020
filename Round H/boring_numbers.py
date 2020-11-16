@@ -14,7 +14,7 @@ def f(x):
     for i, digit in enumerate(digits, 1):
         result += (digit+1-i%2)//2 * base  # count ab?xxxx
         if i%2 != digit%2:
-            break
+            break  # not a prefix of boring number
         base //= 5
     return result
 
