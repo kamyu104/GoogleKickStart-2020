@@ -9,8 +9,8 @@
 
 from math import log, exp
 
-def prob(logfac, n, r):  # log(C(n, r)/2^n)
-    return exp(logfac[n]-logfac[r]-logfac[n-r]-n*log(2))  # math.exp / math.log is O(1) due to less precision
+def prob(logfac, n, r):  # C(n, r)/2^n * 1/2
+    return exp(logfac[n]-logfac[r]-logfac[n-r]-(n+1)*log(2))  # math.exp / math.log is O(1) due to less precision
 
 def wandering_robot():
     W, H, L, U, R, D = map(int, raw_input().strip().split())
@@ -20,17 +20,11 @@ def wandering_robot():
         logfac.append(logfac[-1] + log(x))
     result = 0.0
     if D < H:
-        y = D+1
-        for x in reversed(xrange(1, L)):
-            result += prob(logfac, x+y-2, x-1) if y < H else prob(logfac, x+(y-1)-2, x-1)/2.0
-            if y < H:
-                y += 1
-    if R < W:
-        x = R+1
-        for y in reversed(xrange(1, U)):
-            result += prob(logfac, x+y-2, y-1) if x < W else prob(logfac, (x-1)+y-2, y-1)/2.0
-            if x < W:
-                x += 1
+        for x in xrange(1, L):
+            result += prob(logfac, x+D-2, x-1)
+    if R < W: 
+        for y in xrange(1, U):
+            result += prob(logfac, R+y-2, y-1) 
     return result
 
 for case in xrange(input()):
