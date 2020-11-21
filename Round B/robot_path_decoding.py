@@ -31,8 +31,8 @@ def robot_path_decoding():
 
     return "%s %s" % tuple(map(lambda x:x+1, parse(P, [0])))
 
-MAX_P_LENGTH = 2000
 BASE = 3
+MAX_P_LENGTH = 2000
 setrecursionlimit(BASE+MAX_P_LENGTH)
 DIR = {'E':(1, 0), 'S':(0, 1), 'W':(-1, 0), 'N':(0, -1)}
 MOD = 10**9
