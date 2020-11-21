@@ -7,20 +7,19 @@
 # Space: O(N)
 #
 
-from sys import setrecursionlimit
+def iter_parse(P, i):
 
-def parse(P, i):
-    if i[0] == len(P):
+    if i == len(P):
         return 0, 0
-    if P[i[0]] == ')':
-        i[0] += 1
+    if P[i] == ')':
+        i += 1
         return 0, 0
-    elif P[i[0]].isalpha():
-        dx, dy = DIR[P[i[0]]]
-        i[0] += 1
-    elif P[i[0]].isdigit():
-        d = int(P[i[0]])
-        i[0] += 2  # moving extra 1 step is for '('
+    elif P[i].isalpha():
+        dx, dy = DIR[P[i]]
+        i += 1
+    elif P[i].isdigit():
+        d = int(P[i])
+        i += 2  # moving extra 1 step is for '('
         dx, dy = parse(P, i)
         dx, dy = (d*dx)%MOD, (d*dy)%MOD
     dx2, dy2 = parse(P, i)
@@ -29,11 +28,23 @@ def parse(P, i):
 def robot_path_decoding():
     P = raw_input().strip()
 
-    return "%s %s" % tuple(map(lambda x:x+1, parse(P, [0])))
+    i = dx = dy = 0
+    stk = []
+    while i < len(P):
+        if P[i] == ')':
+            prev_dx, prev_dy, d = stk.pop()
+            dx, dy = (prev_dx+d*dx)%MOD, (prev_dy+d*dy)%MOD
+            i += 1
+        elif P[i].isalpha():
+            dx, dy = (dx+DIR[P[i]][0])%MOD, (dy+DIR[P[i]][1])%MOD
+            i += 1
+        elif P[i].isdigit():
+            d = int(P[i])
+            stk.append((dx, dy, d))
+            dx = dy = 0
+            i += 2  # moving extra 1 step is for '('
+    return "%s %s" % (dx+1, dy+1)
 
-BASE = 3
-MAX_P_LENGTH = 2000
-setrecursionlimit(BASE+MAX_P_LENGTH)
 DIR = {'E':(1, 0), 'S':(0, 1), 'W':(-1, 0), 'N':(0, -1)}
 MOD = 10**9
 for case in xrange(input()):
