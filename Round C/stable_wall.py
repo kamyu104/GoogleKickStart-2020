@@ -7,17 +7,15 @@
 # Space: O(1)
 #
 
-def dfs(adj, node, curr, lookup, result):
-    lookup.add(node)
-    curr.add(node)
+def dfs(adj, node, lookup, result):
+    lookup[node] = VISITING
     for child in adj[node]:
-        if child in curr:
+        if child not in lookup:
+            if not dfs(adj, child, lookup, result):
+                return False
+        elif lookup[child] == VISITING:  # circular dependency
             return False
-        if child in lookup:
-            continue
-        if not dfs(adj, child, curr, lookup, result):
-            return False
-    curr.remove(node)
+    lookup[node] = VISITED
     result.append(node)
     return True
 
@@ -34,13 +32,14 @@ def stable_wall():
         for j, x in enumerate(row[(i-1)%2]):
             if x != row[i%2][j]: 
                 adj[x].add(row[i%2][j])
-    result, lookup = [], set()
+    result, lookup = [], {}
     for x in adj.iterkeys():
         if x in lookup:
             continue
-        if not dfs(adj, x, set(), lookup, result):
+        if not dfs(adj, x, lookup, result):
             return -1
     return "".join(result)
 
+VISITING, VISITED = range(2)
 for case in xrange(input()):
     print 'Case #%d: %s' % (case+1, stable_wall())
