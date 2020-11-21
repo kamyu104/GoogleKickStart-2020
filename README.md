@@ -1,4 +1,4 @@
-# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-20%20%2F%2032-ff69b4.svg)
+# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-24%20%2F%2032-ff69b4.svg)
 
 Python solutions of Google Kick Start 2020. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A problem was marked as `Very Hard` means that it was an unsolved one during the contest and may not be that difficult.
 
@@ -22,6 +22,10 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 ## Round C
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Countdown](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003380d2)| [Python](./Round%20C/countdown.py)| _O(N)_ | _O(1)_ | Easy | | Array |
+|B| [Stable Wall](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003379bb)| [Python](./Round%20C/stable_wall.py) | _O(R * C)_ | _O(1)_ | Easy | | Topological Sort, DFS |
+|C| [Perfect Array](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003381cb)| [Python](./Round%20C/perfect_array.py)| _O(N * sqrt(N * MAX_A))_ | _O(N * MAX_A)_ | Easy | | DFS, Math |
+|D| [Candies](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/0000000000337b4d)| [PyPy](./Round%20C/candies.py) | _O(N + QlogN)_ | _O(N)_ | Medium | | Fenwick Tree |
 
 ## Round D
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
