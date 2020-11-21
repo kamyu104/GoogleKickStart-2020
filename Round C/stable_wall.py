@@ -7,8 +7,6 @@
 # Space: O(1)
 #
 
-from collections import defaultdict
-
 def dfs(adj, node, curr, lookup, result):
     lookup.add(node)
     curr.add(node)
@@ -25,12 +23,12 @@ def dfs(adj, node, curr, lookup, result):
 
 def stable_wall():
     R, C = map(int, raw_input().strip().split())
-    adj = defaultdict(set)
+    adj = {}
     row = [[0]*C for _ in xrange(2)]
     for i in xrange(R):
         row[i%2] = list(raw_input().strip())
         for x in row[i%2]:
-            adj[x]
+            adj.setdefault(x, set())
         if not i:
             continue
         for j, x in enumerate(row[(i-1)%2]):
