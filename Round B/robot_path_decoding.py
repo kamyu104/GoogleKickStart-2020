@@ -7,24 +7,6 @@
 # Space: O(N)
 #
 
-def iter_parse(P, i):
-
-    if i == len(P):
-        return 0, 0
-    if P[i] == ')':
-        i += 1
-        return 0, 0
-    elif P[i].isalpha():
-        dx, dy = DIR[P[i]]
-        i += 1
-    elif P[i].isdigit():
-        d = int(P[i])
-        i += 2  # moving extra 1 step is for '('
-        dx, dy = parse(P, i)
-        dx, dy = (d*dx)%MOD, (d*dy)%MOD
-    dx2, dy2 = parse(P, i)
-    return (dx+dx2)%MOD, (dy+dy2)%MOD
-
 def robot_path_decoding():
     P = raw_input().strip()
 
