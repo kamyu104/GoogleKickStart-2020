@@ -21,7 +21,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 |A| [Bike Tour](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d82e6)| [Python](./Round%20B/bike_tour.py)| _O(N)_ | _O(1)_ | Easy | | Array |
 |B| [Bus Routes](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d83bf)| [Python](./Round%20B/bus_routes.py) | _O(N)_ | _O(1)_ | Easy | | Greedy |
 |C| [Robot Path Decoding](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d83dc)| [Python](./Round%20B/robot_path_decoding.py)| _O(N)_ | _O(N)_ | Easy | | Stack |
-|D| [Wandering Robot](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d8565)| [Python](./Round%20B/wandering_robot.py) [Python](./Round%20B/wandering_robot2.py) | _O(W + H)_ | _O(W + H)_ | Hard | | Binomial Coefficient, Probability |
+|D| [Wandering Robot](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d8565)| [Python](./Round%20B/wandering_robot.py) [Python](./Round%20B/wandering_robot2.py) | _O(W + H)_ | _O(W + H)_ | Hard | | Binomial Coefficient, Probability, Log Representation, Prefix Sum |
 
 ## Round C
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
