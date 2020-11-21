@@ -1,6 +1,6 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
-# Google Kick Start 2020 Round B - Problem D. Bus Routes
+# Google Kick Start 2020 Round B - Problem D. Wandering Robot
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d8565
 #
 # Time:  O(min(W, H))
