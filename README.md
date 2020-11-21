@@ -53,7 +53,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 |A| [ATM Queue](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4ed8)| [Python](./Round%20F/atm_queue.py)| _O(NlogN)_ | _O(1)_ | Easy | | Sort |
 |B| [Metal Harvest](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4b8b)| [Python](./Round%20F/metal_harvest.py) | _O(NlogN)_ | _O(1)_ | Easy | | Sort |
 |C| [Painters' Duel](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f47fb)| [Python](./Round%20F/painters_duel.py)| _O(2^(S^2))_ | _O(2^(S^2))_ | Medium | | Memoization, Alpha Beta Pruning |
-|D| [Yeetzhee](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4dea)| [Python](./Round%20F/yeetzhee.py) | _O(M * S)_ | _O(M * S)_ | Hard | | Math, Memoization, Greedy |
+|D| [Yeetzhee](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff48/00000000003f4dea)| [Python](./Round%20F/yeetzhee.py) | _O(M * S)_ | _O(M * S)_ | Hard | | Math, Expected Value, Memoization, Greedy |
 
 ## Round G
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
@@ -61,7 +61,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 |A| [Kick_Start](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414bfb)| [Python](./Round%20G/kick_start.py)| _O(N)_ | _O(1)_ | Easy | | Math |
 |B| [Maximum Coins](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414a23)| [Python](./Round%20G/maximum_coins.py) [Python](./Round%20G/maximum_coins2.py)| _O(N^2)_ | _O(1)_ | Easy | | Matrix |
 |C| [Combination Lock](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000414a24)| [Python](./Round%20G/combination_lock.py) [Python](./Round%20G/combination_lock2.py)| _O(WlogW)_ | _O(1)_ | Easy | | Math, Prefix Sum |
-|D| [Merge Cards](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000415054)| [Python](./Round%20G/merge_cards2.py) [Python](./Round%20G/merge_cards3.py) | _O(N)_ | _O(N)_ | Medium | | Math, DP, Precompute, Prefix Sum |
+|D| [Merge Cards](https://codingcompetitions.withgoogle.com/kickstart/round/00000000001a0069/0000000000415054)| [Python](./Round%20G/merge_cards2.py) [Python](./Round%20G/merge_cards3.py) | _O(N)_ | _O(N)_ | Medium | | Math, Expected Value, DP, Precompute, Prefix Sum |
 
 ## Round H
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
