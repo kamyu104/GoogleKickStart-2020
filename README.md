@@ -24,7 +24,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Countdown](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003380d2)| [Python](./Round%20C/countdown.py)| _O(N)_ | _O(1)_ | Easy | | Array |
 |B| [Stable Wall](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003379bb)| [Python](./Round%20C/stable_wall.py) | _O(R * C)_ | _O(1)_ | Easy | | Topological Sort, DFS |
-|C| [Perfect Subarray](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003381cb)| [PyPy](./Round%20C/perfect_subarray.py)| _O(N * sqrt(N * MAX_A))_ | _O(N * MAX_A)_ | Easy | | Math, Prefix Sum |
+|C| [Perfect Subarray](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003381cb)| [PyPy](./Round%20C/perfect_subarray.py)| _O(N * sqrt(N * MAX_A))_ | _O(N * MAX_A)_ | Medium | | Math, Prefix Sum |
 |D| [Candies](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/0000000000337b4d)| [Python](./Round%20C/candies.py) | _O(N + QlogN)_ | _O(N)_ | Medium | | BIT, Fenwick Tree |
 
 ## Round D
