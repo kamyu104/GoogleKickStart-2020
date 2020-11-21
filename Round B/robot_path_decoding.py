@@ -10,20 +10,22 @@
 def robot_path_decoding():
     P = raw_input().strip()
 
-    i = dx = dy = 0
+    i = dx = dy = d = 0
     stk = []
     while i < len(P):
         if P[i].isalpha():
-            dx, dy = (dx+DIR[P[i]][0])%MOD, (dy+DIR[P[i]][1])%MOD
+            dx, dy, d = (dx+DIR[P[i]][0])%MOD, (dy+DIR[P[i]][1])%MOD, 0
             i += 1
         elif P[i].isdigit():
-            d = int(P[i])
+            d = 10*d+int(P[i])
+            i += 1
+        elif P[i] == '(':
             stk.append((dx, dy, d))
-            dx = dy = 0
-            i += 2  # moving extra 1 step is for '('
+            dx = dy = d = 0
+            i += 1
         elif P[i] == ')':
             prev_dx, prev_dy, d = stk.pop()
-            dx, dy = (prev_dx+d*dx)%MOD, (prev_dy+d*dy)%MOD
+            dx, dy, d = (prev_dx+d*dx)%MOD, (prev_dy+d*dy)%MOD, 0
             i += 1
     return "%s %s" % (dx+1, dy+1)
 
