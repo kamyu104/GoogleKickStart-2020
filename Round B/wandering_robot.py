@@ -9,7 +9,7 @@
 
 from math import log, exp
 
-def prob(logfac, n, r):  # log(C(n, r)/2^n)
+def prob(logfac, n, r):  # C(n, r)/2^n
     return exp(logfac[n]-logfac[r]-logfac[n-r]-n*log(2))  # math.exp / math.log is O(1) due to less precision
 
 def wandering_robot():
