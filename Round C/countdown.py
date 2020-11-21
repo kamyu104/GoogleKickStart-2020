@@ -1,6 +1,6 @@
 # Copyright (c) 2020 kamyu. All rights reserved.
 #
-# Google Kick Start 2020 Round C - Problem A. CountDown
+# Google Kick Start 2020 Round C - Problem A. Countdown
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ff43/00000000003380d2
 #
 # Time:  O(N)
