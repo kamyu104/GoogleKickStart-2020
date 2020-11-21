@@ -7,7 +7,7 @@
 # Space: O(N)
 #
 
-class BIT(object):  # 1-indexed.
+class BIT(object):  # 0-indexed.
     def __init__(self, nums, M):  # Time: O(N)
         self.__bit = [0]*(len(nums)+1)  # Extra one for dummy node.
         for i in xrange(1, len(self.__bit)):
@@ -17,11 +17,13 @@ class BIT(object):  # 1-indexed.
             self.__bit[i] -= self.__bit[i-(i&-i)]
 
     def add(self, i, val):  # Time: O(logN)
+        i += 1  # Extra one for dummy node.
         while i < len(self.__bit):
             self.__bit[i] += val
             i += (i & -i)
 
     def query(self, i):  # Time: O(logN)
+        i += 1  # Extra one for dummy node.
         ret = 0
         while i > 0:
             ret += self.__bit[i]
@@ -31,8 +33,8 @@ class BIT(object):  # 1-indexed.
 def update(A, T, MT, i, v):
     diff = v-A[i]
     sign = 1 if i%2 == 0 else -1
-    T.add(i+1, sign*diff)
-    MT.add(i+1, sign*diff*(i+1))
+    T.add(i, sign*diff)
+    MT.add(i, sign*diff*(i+1))
     A[i] = v
 
 def range_sum(bit, l, r):
@@ -50,9 +52,9 @@ def candies():
             x, v = int(a)-1, int(b)
             update(A, T, MT, x, v)
             continue
-        l, r = int(a), int(b)
-        sign = 1 if (l-1)%2 == 0 else -1
-        result += sign*(range_sum(MT, l, r) - (l-1)*range_sum(T, l, r))
+        l, r = int(a)-1, int(b)-1
+        sign = 1 if l%2 == 0 else -1
+        result += sign*(range_sum(MT, l, r) - l*range_sum(T, l, r))
     return result
 
 for case in xrange(input()):
