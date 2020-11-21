@@ -13,11 +13,7 @@ def robot_path_decoding():
     i = dx = dy = 0
     stk = []
     while i < len(P):
-        if P[i] == ')':
-            prev_dx, prev_dy, d = stk.pop()
-            dx, dy = (prev_dx+d*dx)%MOD, (prev_dy+d*dy)%MOD
-            i += 1
-        elif P[i].isalpha():
+        if P[i].isalpha():
             dx, dy = (dx+DIR[P[i]][0])%MOD, (dy+DIR[P[i]][1])%MOD
             i += 1
         elif P[i].isdigit():
@@ -25,6 +21,10 @@ def robot_path_decoding():
             stk.append((dx, dy, d))
             dx = dy = 0
             i += 2  # moving extra 1 step is for '('
+        elif P[i] == ')':
+            prev_dx, prev_dy, d = stk.pop()
+            dx, dy = (prev_dx+d*dx)%MOD, (prev_dy+d*dy)%MOD
+            i += 1
     return "%s %s" % (dx+1, dy+1)
 
 DIR = {'E':(1, 0), 'S':(0, 1), 'W':(-1, 0), 'N':(0, -1)}
