@@ -1,4 +1,4 @@
-# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-24%20%2F%2032-ff69b4.svg)
+# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-28%20%2F%2032-ff69b4.svg)
 
 Python solutions of Google Kick Start 2020. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A problem was marked as `Very Hard` means that it was an unsolved one during the contest and may not be that difficult.
 
@@ -18,6 +18,10 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 ## Round B
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Bike Tour](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d82e6)| [Python](./Round%20B/bike_tour.py)| _O(N)_ | _O(1)_ | Easy | | Array |
+|B| [Bus Routes](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d83bf)| [Python](./Round%20B/bus_routes.py) | _O(N)_ | _O(1)_ | Easy | | Greedy |
+|C| [Robot Path Decoding](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d83dc)| [Python](./Round%20B/robot_path_decoding.py)| _O(N)_ | _O(N)_ | Easy | | Stack |
+|D| [Wandering Robots](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d8565)| [Python](./Round%20B/wandering_robots.py) | _O(W + H)_ | _O(W + H)_ | Hard | | Binomial Coefficient, Probability |
 
 ## Round C
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |

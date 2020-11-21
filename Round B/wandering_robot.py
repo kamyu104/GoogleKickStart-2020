@@ -3,8 +3,8 @@
 # Google Kick Start 2020 Round B - Problem D. Wandering Robot
 # https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d8565
 #
-# Time:  O(min(W, H))
-# Space: O(min(W, H))
+# Time:  O(W + H)
+# Space: O(W + H)
 #
 
 from math import log, exp
