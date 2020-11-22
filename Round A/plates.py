@@ -10,13 +10,13 @@
 def plates():
     N, K, P = map(int, raw_input().strip().split())
     stks = [map(int, raw_input().strip().split()) for _ in xrange(N)]
+
     prefixes = []  
     for stk in stks:
         prefix = [0]
         for x in stk:
             prefix.append(prefix[-1] + x)
         prefixes.append(prefix)
-
     dp = [0]*(P+1)  # dp[j] = max sum of beauty values with j plates
     for i in xrange(N):
         new_dp = [0]*(P+1)
