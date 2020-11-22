@@ -10,7 +10,7 @@
 def check(M, K, target):
     count = 0
     for i in xrange(1, len(M)):
-        count += ((M[i]-M[i-1])-1)//target
+        count += ((M[i]-M[i-1])-1)//target  # ceiling(diff/target)-1
         if count > K:
             return False
     return True
