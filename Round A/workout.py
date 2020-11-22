@@ -25,7 +25,7 @@ def workout():
         if check(M, K, mid):
             right = mid-1
         else:
-            left =mid+1
+            left = mid+1
     return left
 
 for case in xrange(input()):
