@@ -17,7 +17,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 |A| [Allocation](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc7/00000000001d3f56)| [Python](./Round%20A/allocation.py)| _O(N)_ | _O(MAX_A)_ | Easy | | Greedy, Counting Sort |
 |B| [Plates](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc7/00000000001d40bb)| [Python](./Round%20A/plates.py) | _O(N * P * K)_ | _O(P)_ | Easy | | DP, Prefix Sum |
 |C| [Workout](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc7/00000000001d3f5b)| [Python](./Round%20A/workout.py)| _O(Nlog(MAX_DIFF))_ | _O(1)_ | Easy | | Binary Search, Greedy |
-|D| [Bundling](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc7/00000000001d3ff3)| [Python](./Round%20A/bundling.py) | _O(N * L)_ | _O(T)_ | Medium | | Trie, DFS, Stack |
+|D| [Bundling](https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc7/00000000001d3ff3)| [Python](./Round%20A/bundling.py) | _O(N * L)_ | _O(T)_ | Medium | | Trie, Greedy, DFS, Stack |
 
 ## Round B
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
