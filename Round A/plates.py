@@ -15,7 +15,7 @@ def plates():
     for stk in stks:
         prefix = [0]
         for x in stk:
-            prefix.append(prefix[-1] + x)
+            prefix.append(prefix[-1]+x)
         prefixes.append(prefix)
     dp = [0]*(P+1)  # dp[j] = max sum of beauty values with j plates
     for i in xrange(N):
