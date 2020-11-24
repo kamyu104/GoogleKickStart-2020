@@ -8,25 +8,25 @@
 #
 
 from collections import defaultdict
-from functools import reduce
+from functools import reduce, partial
 
 def iter_dfs(K, node):
-    result = 0
-    stk = [(1, (node, 0))]
+    def divide(node, depth):
+        if "_count" not in node:
+            node["_count"] = 0
+        stk.append(partial(conquer, node, depth))
+        stk.extend((partial(divide, child, depth+1) for k, child in node.iteritems() if k != "_count"))
+
+    def conquer(node, depth):
+        node["_count"] += sum(child["_count"] for k, child in node.iteritems() if k != "_count")
+        q, node["_count"] = divmod(node["_count"], K)
+        result[0] += q*depth
+
+    result = [0]
+    stk = [partial(divide, node, 0)]
     while stk:
-        step, params = stk.pop()
-        if step == 1:
-            node, depth = params
-            if "_count" not in node:
-                node["_count"] = 0
-            stk.append((2, (node, depth)))
-            stk.extend(((1, (child, depth+1)) for k, child in node.iteritems() if k != "_count"))  
-        elif step == 2:
-            node, depth = params
-            node["_count"] += sum(child["_count"] for k, child in node.iteritems() if k != "_count")
-            q, node["_count"] = divmod(node["_count"], K)
-            result += q*depth
-    return result
+        stk.pop()()
+    return result[0]
 
 def bundling():
     N, K = map(int, raw_input().strip().split())
