@@ -17,9 +17,8 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
             if parent != -1:
                 P[curr].append(parent)  # ancestors of the node i
             i = 0
-            while i < len(P[curr]):
-                if i < len(P[P[curr][i]]):
-                    P[curr].append(P[P[curr][i]][i])
+            while i < len(P[curr]) and i < len(P[P[curr][i]]):
+                P[curr].append(P[P[curr][i]][i])
                 i += 1
             C[0] += 1
             L[curr] = C[0]  # the subtree of the node i is represented by traversal index L[i]..R[i]
