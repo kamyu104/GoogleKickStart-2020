@@ -1,4 +1,4 @@
-# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-32%20%2F%2032-ff69b4.svg)
+# [GoogleKickStart 2020](https://codingcompetitions.withgoogle.com/kickstart/archive/2020) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-32%20%2F%2032-ff69b4.svg)
 
 Python solutions of Google Kick Start 2020. Solution begins with `*` means it will get TLE in the largest data set (total computation amount > `10^8`, which is not friendly for Python to solve in 5 ~ 15 seconds). A problem was marked as `Very Hard` means that it was an unsolved one during the contest and may not be that difficult.
 
@@ -10,6 +10,7 @@ Python solutions of Google Kick Start 2020. Solution begins with `*` means it wi
 * [Round F](https://github.com/kamyu104/GoogleKickStart-2020#round-f)
 * [Round G](https://github.com/kamyu104/GoogleKickStart-2020#round-g)
 * [Round H](https://github.com/kamyu104/GoogleKickStart-2020#round-h)
+* [Kick Start 2021](https://github.com/kamyu104/GoogleKickStart-2021)
 
 ## Round A
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
