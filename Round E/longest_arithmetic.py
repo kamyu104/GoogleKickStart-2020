@@ -11,7 +11,7 @@ def longest_arithmetic():
     N = input()
     A = map(int, raw_input().strip().split())
 
-    result = 0
+    result = 1
     d, count = None, 0
     for i in xrange(N-1):
         if A[i+1]-A[i] == d:
