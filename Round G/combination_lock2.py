@@ -19,7 +19,7 @@ def combination_lock():
     prefix_m2 = sum(X[i] for i in xrange(((W-1)+1)//2))
     prefix_m1_add_1 = sum(X[i] for i in xrange(((W-1)//2)+1))
     prefix_i = 0
-    for i, x in enumerate(X):
+    for i in xrange(len(X)):
         result = min(result, (prefix_j_add_1-prefix_m2) - (prefix_m1_add_1-prefix_i))
         ni, nj = i+1, (i+1)+(W-1)
         m1, m2 = (ni+nj)//2, (ni+nj+1)//2
